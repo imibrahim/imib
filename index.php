@@ -65,8 +65,7 @@ $(window).on('load',function(){
 		});
 	});
 	
-$(document).ready(function(){
-	});
+
 </script>
 </body>
 </html>
