@@ -1,0 +1,62 @@
+/* CSS Document */
+
+$color1 : #71C341;
+@import 'reset';
+@import "bourbon/bourbon";
+@include font-face("Museo Sans Rounded", "fonts/museo100", lighter);
+@include font-face("Museo Sans Rounded", "fonts/museo300", normal);
+@include font-face("Museo Sans Rounded", "fonts/museo500",bold);
+
+/*Basic Element Styles*/
+body{font-family:'Museo Sans Rounded', sans-serif}
+#container{display: table; width: 100%; height: 100%;}
+#content{display: table-cell; width: 100%; height: 100%; vertical-align: middle; text-align:center; position:relative; @include box-sizing(border-box);}
+#hello{font-size:2em; font-weight:100;
+	strong{color:$color1; opacity:0;}
+    .thin{opacity:0}
+    .hellotext{display:block; margin:10px 0;}
+    a{
+		display:inline-block;opacity:0 ;@include transition(all 0.3s linear);
+	}
+   /**/
+    }
+
+#profile {display:block; margin:0 auto;
+		
+        
+        a{position:relative; @include transition(all 0.3s linear); display:block; width:256px; height: 256px; margin:0 auto;z-index:9999;
+        	img{border-radius: 100%; border:5px solid transparent; width:100%; @include box-sizing(border-box);@include transition(all 0.5s linear);opacity:0;}
+            }
+        a:active{@include transform(scale(0.98)); img{box-shadow:#008F56 0px 0px 0px}}
+    }
+.ink {
+	display: block; position: absolute;
+	background: hsl(180, 40%, 80%);
+	border-radius: 100%;
+	transform: scale(0);
+}
+/*animation effect*/
+.shadow{box-shadow:#bbb 0px 0px 5px}
+.bouncy{@include animation(bounce 1s linear forwards);}
+
+@include keyframes(bounce) {
+0% {
+    opacity: 0;
+   @include transform(scale(.3));
+  }
+
+  50% {
+    opacity: 1;
+    @include transform(scale(1.05));
+  }
+
+  70% {
+	  opacity: 1;
+    @include transform(scale(.9));
+  }
+
+  100% {
+	  opacity: 1;
+    @include transform(scale(1));
+  }
+}
